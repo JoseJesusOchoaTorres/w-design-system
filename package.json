@@ -1,0 +1,50 @@
+{
+  "name": "w-design-system",
+  "version": "1.0.0",
+  "description": "W Design System is a suite of reusable components",
+  "scripts": {
+    "test": "npm test",
+    "rollup": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseJesusOchoaTorres/w-design-system.git"
+  },
+  "keywords": [
+    "Design",
+    "system",
+    "React",
+    "Typescript",
+    "Storybook",
+    "Rollup"
+  ],
+  "author": "Jose Jesus Ochoa Torres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoseJesusOchoaTorres/w-design-system/issues"
+  },
+  "homepage": "https://github.com/JoseJesusOchoaTorres/w-design-system#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/react": "^18.2.7",
+    "react": "^18.2.0",
+    "rollup": "^3.23.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
+    "tslib": "^2.5.2",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
