@@ -4,7 +4,9 @@
   "description": "W Design System is a suite of reusable components",
   "scripts": {
     "rollup": "rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,13 @@
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.1",
+    "@storybook/addon-essentials": "^7.0.24",
+    "@storybook/addon-interactions": "^7.0.24",
+    "@storybook/addon-links": "^7.0.24",
+    "@storybook/blocks": "^7.0.24",
+    "@storybook/react": "^7.0.24",
+    "@storybook/react-vite": "^7.0.24",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.2",
@@ -47,7 +56,9 @@
     "jest-environment-jsdom": "^29.5.0",
     "jsdom": "^22.1.0",
     "jsdom-global": "^3.0.2",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "rollup": "^3.23.0",
     "rollup-plugin-dts": "^5.3.0",
@@ -55,6 +66,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
+    "storybook": "^7.0.24",
     "style-loader": "^3.3.3",
     "tslib": "^2.5.2",
     "typescript": "^5.0.4"
