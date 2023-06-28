@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "W Design System is a suite of reusable components",
   "scripts": {
-    "rollup": "rollup -c",
     "test": "jest",
+    "rollup": "rollup -c",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "svgr": "svgr --config-file .svgrrc.js ./src/assets/svg-icons",
+    "build": "rimraf ./src/components/icons/ && rimraf dist && npm run svgr && npm run rollup"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "@storybook/react": "^7.0.24",
     "@storybook/react-vite": "^7.0.24",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@svgr/cli": "^8.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.2",
@@ -74,7 +77,6 @@
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [

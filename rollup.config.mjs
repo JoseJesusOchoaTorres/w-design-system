@@ -2,7 +2,7 @@ import dts from "rollup-plugin-dts";
 
 import packageJson from "./package.json" assert { type: "json" };
 
-import { folderBuilds, plugins } from "./rollup-scripts.js";
+import { folderBuilds, plugins } from "./rollup-scripts.mjs";
 
 export default [
   {

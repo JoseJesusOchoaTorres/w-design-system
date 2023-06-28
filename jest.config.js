@@ -8,7 +8,12 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: ["./src/components/**/*.tsx"],
-  coveragePathIgnorePatterns: ["node_modules", ".stories.tsx", ".types.ts"],
+  coveragePathIgnorePatterns: [
+    "node_modules",
+    ".stories.tsx",
+    ".types.ts",
+    "./src/components/icons",
+  ],
   coverageThreshold: {
     global: {
       statements: 0,
