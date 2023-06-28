@@ -2,6 +2,7 @@ import generatePackageJson from "rollup-plugin-generate-package-json";
 import typescript from "@rollup/plugin-typescript";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import postcss from "rollup-plugin-postcss";
 import terser from "@rollup/plugin-terser";
 import fs from "fs";
 
@@ -9,6 +10,7 @@ import packageJson from "./package.json" assert { type: "json" };
 
 export const plugins = [
   terser(),
+  postcss(),
   resolve(),
   commonjs(),
   typescript({ tsconfig: "tsconfig.json" }),

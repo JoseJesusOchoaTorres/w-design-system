@@ -1,0 +1,17 @@
+.button {
+  background-color: rgb(206, 206, 206);
+  transition: all 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  appearance: none;
+  color: black;
+
+  &:hover {
+    background-color: rgb(179, 179, 179);
+  }
+
+  &--primary {
+    background-color: black;
+    color: white;
+  }
+}
