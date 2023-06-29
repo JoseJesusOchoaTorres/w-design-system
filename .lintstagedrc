@@ -1,0 +1,3 @@
+{
+  "*/**/*.{js,ts,tsx,json,md}": ["npm run lint:fix"]
+}
