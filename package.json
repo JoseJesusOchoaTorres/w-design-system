@@ -1,6 +1,6 @@
 {
 	"name": "@JoseJesusOchoaTorres/w-design-system",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "W Design System is a suite of reusable components",
 	"scripts": {
 		"test": "jest",
