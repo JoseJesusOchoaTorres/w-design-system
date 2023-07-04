@@ -1,19 +1,19 @@
 .button {
-  background-color: rgb(206, 206, 206);
-  border: 1px solid black;
-  transition: all 0.3s;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  appearance: none;
-  cursor: pointer;
-  color: black;
+	background-color: rgb(206, 206, 206);
+	border: 1px solid black;
+	transition: all 0.3s;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	appearance: none;
+	cursor: pointer;
+	color: black;
 
-  &:hover {
-    background-color: rgb(179, 179, 179);
-  }
+	&:hover {
+		background-color: rgb(179, 179, 179);
+	}
 
-  &--primary {
-    background-color: black;
-    color: white;
-  }
+	&--primary {
+		background-color: black;
+		color: white;
+	}
 }
