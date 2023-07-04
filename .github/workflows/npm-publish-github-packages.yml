@@ -5,10 +5,10 @@ name: Node.js Package
 
 on:
  release:
-  types: [created]
+  types: [published]
 
 jobs:
- build:
+ validate:
   runs-on: ubuntu-latest
   steps:
    - uses: actions/checkout@v3
@@ -18,8 +18,17 @@ jobs:
    - run: npm ci
    - run: npm test
    - run: npm run lint
-
- publish-gpr:
+ build:
+  needs: validate
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+   - uses: actions/setup-node@v3
+     with:
+      node-version: 16
+   - run: npm ci
+   - run: npm run build
+ publish:
   needs: build
   runs-on: ubuntu-latest
   permissions:
