@@ -4,71 +4,42 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [published]
+ release:
+  types: [published]
 
 jobs:
-  dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - name: Cache node modules
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-  validate:
-    needs: dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Restore node modules cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - run: npm test
-      - run: npm run lint
-  build:
-    needs: [dependencies, validate]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Restore node modules cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - run: npm run build
-  publish:
-    needs: [dependencies, build]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-      - name: Restore node modules cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ validate:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+   - uses: actions/setup-node@v3
+     with:
+      node-version: 16
+   - run: npm ci
+   - run: npm test
+   - run: npm run lint
+ build:
+  needs: validate
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+   - uses: actions/setup-node@v3
+     with:
+      node-version: 16
+   - run: npm ci
+   - run: npm run build
+ publish:
+  needs: build
+  runs-on: ubuntu-latest
+  permissions:
+   contents: read
+   packages: write
+  steps:
+   - uses: actions/checkout@v3
+   - uses: actions/setup-node@v3
+     with:
+      node-version: 16
+      registry-url: https://npm.pkg.github.com/
+   - run: npm publish
+     env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
