@@ -23,7 +23,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
   validate:
     needs: install-dependencies
     runs-on: ubuntu-latest
@@ -39,7 +38,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - run: npm test
       - run: npm run lint
-
   build:
     needs: install-dependencies
     runs-on: ubuntu-latest
@@ -54,7 +52,6 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - run: npm run build
-
   publish:
     needs: [install-dependencies, build]
     runs-on: ubuntu-latest
