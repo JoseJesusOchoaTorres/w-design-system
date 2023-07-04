@@ -39,7 +39,7 @@ jobs:
       - run: npm test
       - run: npm run lint
   build:
-    needs: dependencies
+    needs: [dependencies, validate]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
