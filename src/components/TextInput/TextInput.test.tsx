@@ -3,13 +3,13 @@ import React from "react"
 import { render, screen } from "@testing-library/react"
 
 // Local components
-import Button from "./Button"
+import TextInput from "./TextInput"
 
-describe("Button", () => {
+describe("TextInput", () => {
 	test("renders component successfully", () => {
-		render(<Button label="test" />)
+		render(<TextInput label="test" />)
 
-		const element = screen.getByText(/test/i)
+		const element = screen.getByTestId(/test/i)
 		expect(element).toBeInTheDocument()
 	})
 })

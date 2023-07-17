@@ -5,10 +5,10 @@ import * as React from "react"
 import { ButtonProps } from "./Button.types"
 
 // Styles
-import "./Button.scss"
+import styles from "./Button.module.scss"
 
 const Button = (props: ButtonProps) => (
-	<button className="button">{props.label}</button>
+	<button className={styles.button}>{props.label}</button>
 )
 
 export default Button

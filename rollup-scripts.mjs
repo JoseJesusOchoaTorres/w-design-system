@@ -6,7 +6,7 @@ import postcss from "rollup-plugin-postcss"
 import terser from "@rollup/plugin-terser"
 import fs from "fs"
 
-import packageJson from "./package.json" assert { type: "json" }
+import packageJson from "./package.json"
 
 export const plugins = [
 	terser(),
